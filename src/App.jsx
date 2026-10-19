@@ -7,9 +7,9 @@ const styleJudul = {
   fonwtWeight: 'bold',
 }
 const jam = 9;
+const [daftarMenu, setSaldo] = useState(nilai * 1000);
 
 export default function App() {
-
   return (
     <div>
       <h1 className="judul" style={styleJudul}>
@@ -19,7 +19,7 @@ export default function App() {
       <p>Saldo awal kartu kantin: Rp {nilai*1000}</p>
       {/* <button onClick={() => alert('Terima kasih telah membeli makanan di kantin kami!')}>Beli Makanan</button> */}
       <button disabled="disabled">Beli Makanan</button>
-    
+
     </div>
   )
 }

@@ -8,6 +8,7 @@ function card({
     onHapus,
     onKurang
 }){
+    const[catatan, setCatatan] = useState('');
     return (
         <div className="card">
             <h3>{nama}</h3>
@@ -21,6 +22,19 @@ function card({
             {jumlah === 0? (
                 <p>Belum Dipesan</p>
             ):(<p>Subtotal: RP{(harga * jumlah).toLocaleString('id-ID')}</p>)}
+            {jumlah > 5 && (
+                <span className="badge">Pesanan Banyak</span>
+            )}
+            <label>Catatam Pesanan{''}
+                <input 
+                    value={catatan} 
+                    onChange={(e) => setCatatan(e.target.value)} 
+                />
+            </label>
+            {catatan!== '' && (
+                <p>Catatan: {catatan}</p>
+            )}
+            <button onClick={onHapus}>Hapus Pesanan</button>
         </div>  
     );
 }
